@@ -1,0 +1,52 @@
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# pytest cache
+.pytest_cache/
+.cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+
+# Distribution / build
+dist/
+build/
+*.egg-info/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker volumes / local DB data
+postgres_data/
+redis_data/
+pgdata/
+*.db
+*.sqlite3
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+*.env.docker
+
+# Logs
+*.log
