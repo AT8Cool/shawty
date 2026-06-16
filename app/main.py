@@ -12,25 +12,28 @@ Should NOT contain:
 - Database queries
 - URL shortening logic
 """
+
 from fastapi import FastAPI
-from redis import Redis
-import httpx
-import json
-
+from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router
-
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = [
+        "http://localhost:5173",
+    ],
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"],
+
+)
+
+
 @app.get("/")
 def root():
-    return("Hello I'm alive")
+    return "Hello I'm alive"
 
 
 app.include_router(router)
-
-
-
-
-
-    

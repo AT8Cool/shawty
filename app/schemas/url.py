@@ -23,8 +23,8 @@ from pydantic import BaseModel
 
 
 class ShortenRequest(BaseModel):
-    url : str
+    url: str
 
 
 class ShortenResponse(BaseModel):
-    short_code :str
+    short_code: str
