@@ -37,13 +37,13 @@ async def shorten(url:ShortenRequest)-> ShortenResponse:
 async def redirect(short_code:str):
 
     original_url = get_original_url(short_code)
+    
     if original_url is None:
-
         raise HTTPException(
             status_code=404,
             detail="Invalid or expired URL"
         )
-        
+    
     return RedirectResponse(url = original_url)
 
 
