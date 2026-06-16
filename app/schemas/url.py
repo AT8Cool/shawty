@@ -18,3 +18,13 @@ Create URL Response:
     "short_url": "https://short.ly/abc123"
 }
 """
+
+from pydantic import BaseModel
+
+
+class ShortenRequest(BaseModel):
+    url : str
+
+
+class ShortenResponse(BaseModel):
+    short_code :str

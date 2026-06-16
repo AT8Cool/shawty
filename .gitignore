@@ -1,52 +1,60 @@
-# Environment variables
+# Environment files
 .env
+.env.*
+!.env.example
+!.env.*.example
+.python-version
 
-# Python cache files
+# Python bytecode and caches
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyc
 *$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.hypothesis/
+.tox/
+.nox/
+.cache/
 
-# Virtual environment
-venv/
+# Virtual environments
 .venv/
+venv/
 env/
 ENV/
 
-# pytest cache
-.pytest_cache/
-.cache/
-
-# Coverage reports
-htmlcov/
+# Coverage and test output
 .coverage
+.coverage.*
+htmlcov/
 *.cover
 
-# Distribution / build
-dist/
+# Build and packaging
 build/
+dist/
+site/
+.eggs/
+*.egg
 *.egg-info/
+pip-wheel-metadata/
 
-# IDE files
-.vscode/
-.idea/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Docker volumes / local DB data
+# Local databases and runtime files
 postgres_data/
 redis_data/
 pgdata/
 *.db
 *.sqlite3
+*.log
 
-# Docker
+# Docker local overrides
 docker-compose.override.yml
-.dockerignore
 *.env.docker
 
-# Logs
-*.log
+# Editor and OS files
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

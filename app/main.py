@@ -13,11 +13,23 @@ Should NOT contain:
 - URL shortening logic
 """
 from fastapi import FastAPI
+from redis import Redis
+import httpx
+import json
+from app.services.shortener import create_short_url
 
 app = FastAPI()
 
 
 
+
 @app.get("/")
 def root():
-    return()
+    return("Hello I'm alive")
+
+
+@app.post('/shorten')
+async def shorten(url:str)-> str:
+    
+    return create_short_url(url)
+    
