@@ -22,8 +22,6 @@ from app.services.redis_client import redis_client
 ALPHABET = string.ascii_letters + string.digits
 
 
-redis_client.set("abc123", "https://google.com")
-
 def key_exists(keke:str) -> bool:
   
     return bool(redis_client.exists(keke))
@@ -51,9 +49,6 @@ def normalize_url(original_url:str)->str:
 def store_in_redis(short_code, n_url):
     redis_client.set(short_code,n_url,ex=86400)
     
-
-
-
 def create_short_url(input_url:str):
     n_url = normalize_url(input_url)    
     short_code = generate_short_code()
@@ -62,10 +57,9 @@ def create_short_url(input_url:str):
     return short_code
     
 
-result = create_short_url("google.com")
-print(result)
-print(redis_client.get(result))
 
 
-
-
+def get_original_url(short_code:str):
+   return redis_client.get(short_code)
+   
+     
