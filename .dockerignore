@@ -1,32 +1,43 @@
-# Git
-.git
-.gitignore
+# Git metadata
+.git/
 
-# Python cache
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache files
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
+*.py[cod]
 
-# Virtual environment
-venv/
-.venv/
-env/
+# Node dependencies and frontend builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
 
-# Tests (don't need these in production image)
-tests/
-
-# Environment secrets
+# Environment files
 .env
+.env.*
+!.env.example
+!.env.*.example
 
-# IDE
+# IDE files
 .vscode/
 .idea/
 
-# OS
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS files
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
