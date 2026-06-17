@@ -1,25 +1,27 @@
-.app {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can keep your base resets if you prefer, but Tailwind handles most of this */
+:root {
+  background: #2e1065; /* Fallback deep purple */
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
   min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
 }
 
-.shortener-shell {
-  width: min(100%, 720px);
+/* Optional: Custom scrollbar to match the vibe */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-.eyebrow {
-  color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin: 0 0 12px;
-  text-transform: uppercase;
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
 }
-
-.intro {
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  max-width: 38rem;
+::-webkit-scrollbar-thumb {
+  background: #ec4899; 
+  border-radius: 10px;
 }

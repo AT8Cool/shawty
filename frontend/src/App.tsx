@@ -5,6 +5,7 @@ import {useState} from "react";
 function App() {
   const [url, setUrl] = useState<string>("")
   const [shortCode, setShortCode] = useState<string>("")
+  const [copied, setCopied] = useState<boolean>(false);
 
   async function handleShorten() {
     const response = await fetch(
@@ -23,6 +24,17 @@ function App() {
     const data = await response.json();
     console.log(data);
     setShortCode(data.short_code);
+    setCopied(false);
+
+  }
+  async function handleCopy(){
+    const fullUrl =  `http://127.0.0.1:8000/${shortCode}`
+    await navigator.clipboard.writeText(fullUrl)
+    setCopied(true)
+
+        setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   }
 
   return (
@@ -52,13 +64,23 @@ function App() {
             rel="noopener noreferrer">
                {`http://127.0.0.1:8000/${shortCode}`}
             </a>
+
           </p>
         )}
+        {shortCode && (
+            <button onClick={handleCopy}> Copy</button>
+        )}
+        
+       
+       { copied ? <p>Copied to clipboard</p>: "" }
+        
 
 
       </section>
     </main>
+      
   )
 }
+
 
 export default App
