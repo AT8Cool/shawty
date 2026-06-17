@@ -1,5 +1,6 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "shawty",
+  "description": "React frontend for Shawty, a FastAPI-powered URL shortener.",
   "private": true,
   "version": "0.0.1",
   "type": "module",

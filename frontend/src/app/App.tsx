@@ -8,6 +8,8 @@ interface ShawtyLink {
   createdAt: number;
   expiresAt: number;
 }
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+const SHORT_URL_BASE = import.meta.env.VITE_SHORT_URL_BASE;
 
 function formatTimeLeft(ms: number) {
   if (ms <= 0) return { h: "00", m: "00", s: "00", total: 0 };
@@ -406,9 +408,10 @@ export default function App() {
             <div className="rounded-xl px-5 py-4 flex items-center justify-between gap-3 flex-wrap"
               style={{ background: th.urlBg, border: `1px solid ${th.urlBorder}` }}>
               <span className="text-xl md:text-2xl font-bold" style={{ fontFamily: "DM Mono, monospace", color: th.accent }}>
-                shawty.in/{latestLink.shortCode}
+                {SHORT_URL_BASE}/{latestLink.shortCode}
               </span>
-              <CopyButton text={`https://shawty.in/${latestLink.shortCode}`} th={th} />
+              <CopyButton
+              text={`${SHORT_URL_BASE}/${latestLink.shortCode}`} th={th} />
             </div>
 
             <div>
