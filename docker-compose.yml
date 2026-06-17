@@ -3,3 +3,20 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - redis
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
