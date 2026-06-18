@@ -28,7 +28,9 @@ app.add_middleware(
     "http://127.0.0.1:4173",
     "https://shawty.in",
     "https://www.shawty.in",
-    "http://34.100.159.131:4173"
+    "http://34.100.159.131:4173",
+    "http://shawty.in",
+    "http://www.shawty.in"
 ],
     allow_credentials=True,
     allow_methods=["*"],
