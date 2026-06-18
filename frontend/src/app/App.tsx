@@ -408,8 +408,7 @@ export default function App() {
               <span className="text-xl md:text-2xl font-bold" style={{ fontFamily: "DM Mono, monospace", color: th.accent }}>
                 {SHORT_URL_BASE}/{latestLink.shortCode}
               </span>
-              <CopyButton
-              text={`${SHORT_URL_BASE}/${latestLink.shortCode}`} th={th} />
+              <CopyButton text={`${SHORT_URL_BASE}/${latestLink.shortCode}`} th={th} />
             </div>
 
             <div>
