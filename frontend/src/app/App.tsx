@@ -247,7 +247,7 @@ export default function App() {
     const normalized = raw.startsWith("http") ? raw : `https://${raw}`;
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/shorten", {
+      const response = await fetch(`${API_BASE_URL}/shorten`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
