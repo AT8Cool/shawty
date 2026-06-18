@@ -39,5 +39,9 @@ app.add_middleware(
 def root():
     return "Hello I'm alive"
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 app.include_router(router)
