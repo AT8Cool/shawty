@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Copy, Check, Link2, Zap, Clock, ArrowRight, Sun, Moon } from "lucide-react";
 
 interface ShawtyLink {
-  id: string;
   original: string;
   shortCode: string;
   createdAt: number;
@@ -267,7 +266,6 @@ export default function App() {
 
       // FIX: use shortCode to match the ShawtyLink interface field name
       const newLink: ShawtyLink = {
-        id: crypto.randomUUID(),
         original: normalized,
         shortCode,                            // FIX: was `slug` — now matches interface
         createdAt: now,
