@@ -289,7 +289,7 @@ export default function App() {
   const latestLink = links.find((l) => l.shortCode === latestShortCode);
 
   return (
-    <div className="min-h-screen w-full relative transition-colors duration-500"
+    <div className="min-h-screen overflow-x-clip w-full relative transition-colors duration-500"
       style={{ background: th.bg, fontFamily: "DM Sans, sans-serif", color: th.fg }}>
 
       {/* Glow blobs */}
