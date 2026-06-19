@@ -37,7 +37,7 @@ async def shorten(url: ShortenRequest) -> ShortenResponse:
     return res
 
 
-@router.get("/{short_code}")
+@router.get("/r/{short_code}")
 async def redirect(short_code: str):
     """
     Redirects the user to the original URL associated
