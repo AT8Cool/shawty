@@ -1,5 +1,9 @@
 # SHAWTY 🔗
-
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Redis](https://img.shields.io/badge/Redis-Storage-red)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![GCP](https://img.shields.io/badge/GCP-Deployed-orange)
 **Short links that vanish after 24 hours.**
 
 SHAWTY is a full-stack URL shortener that creates temporary, self-destructing links. Every shortened URL automatically expires after 24 hours, making it ideal for temporary sharing, testing, event registrations, project demos, and short-lived content.
