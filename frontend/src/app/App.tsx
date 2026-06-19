@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { Copy, Check, Link2, Zap, Clock, ArrowRight, Sun, Moon } from "lucide-react";
+import { Copy, Check, Link2, Zap, Clock, ArrowRight, Sun, Moon, Github} from "lucide-react";
 
 interface ShawtyLink {
   original: string;
@@ -163,7 +163,7 @@ function CountdownTimer({ expiresAt, th }: { expiresAt: number; th: typeof theme
 
   return (
     <div className="space-y-3">
-      <div className="flex gap-3 justify-center">
+      <div className="flex gap-3 justify-center flex-wrap">
         <CountdownUnit value={h} label="hrs" color={th.yellow} fg={th.yellowFg} />
         <div className="text-3xl font-black self-center" style={{ fontFamily: "Unbounded", color: th.primary, marginTop: "-12px" }}>:</div>
         <CountdownUnit value={m} label="min" color={th.accent} fg={th.accentFg} />
@@ -405,7 +405,7 @@ export default function App() {
             {/* FIX: use latestLink.shortCode everywhere instead of latestLink.slug */}
             <div className="rounded-xl px-5 py-4 flex items-center justify-between gap-3 flex-wrap"
               style={{ background: th.urlBg, border: `1px solid ${th.urlBorder}` }}>
-              <span className="text-xl md:text-2xl font-bold" style={{ fontFamily: "DM Mono, monospace", color: th.accent }}>
+              <span className="text-xl md:text-2xl font-bold break-all min-w-0" style={{ fontFamily: "DM Mono, monospace", color: th.accent }}>
                 {SHORT_URL_BASE}/r/{latestLink.shortCode}
               </span>
               <CopyButton text={`${SHORT_URL_BASE}/r/${latestLink.shortCode}`} th={th} />
@@ -444,9 +444,28 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 text-center pb-8 text-xs" style={{ color: th.footerColor, fontFamily: "DM Mono, monospace" }}>
-        SHAWTY — links die, memories live &nbsp;✦&nbsp; not responsible for your chaos
-      </footer>
+        <footer
+  className="relative z-10 text-center pb-8 text-xs flex flex-col items-center gap-2"
+  style={{
+    color: th.footerColor,
+    fontFamily: "DM Mono, monospace",
+  }}
+>
+  <span>
+    SHAWTY — links die, memories live ✦ not responsible for your chaos
+  </span>
+
+  <a
+    href="https://github.com/AT8Cool"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-1 hover:opacity-70 transition-opacity"
+    style={{ color: th.footerColor }}
+  >
+    <Github size={12} />
+    Github
+  </a>
+</footer>
     </div>
   );
 }
