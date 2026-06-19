@@ -6,6 +6,15 @@ SHAWTY is a full-stack URL shortener that creates temporary, self-destructing li
 
 🌐 **Live Demo:** https://shawty.in
 
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/de08aac0-9cb4-4fa9-ba57-dac30c1a6bb7"
+    alt="SHAWTY Demo"
+    width=500"
+  />
+</p>
+
+
 ---
 
 ## Overview
