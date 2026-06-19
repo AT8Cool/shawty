@@ -8,13 +8,22 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+
   resolve: {
     alias: {
-      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
   },
 
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+  server: {
+    host: true,
+    allowedHosts: ['shawty.in', 'www.shawty.in'],
+  },
+
+  preview: {
+    host: true,
+    allowedHosts: ['shawty.in', 'www.shawty.in'],
+  },
+
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
